@@ -1,0 +1,16 @@
+{
+  "network": {
+    "name": "holesky",
+    "chainId": 17000
+  },
+  "totp": {
+    "address": "0xA0Ab5FDE5c3911AC9E167068a27B9767ce644461",
+    "txHash": "0x445a15a068c5959c0de1bca6f7e17ab5f2f47ea019372d470a7fc9e7cad33b57"
+  },
+  "twoFactorAuth": {
+    "address": "0x7FBAfF93b1d045f89c7f2f94AC24B850F6c4e7b8",
+    "txHash": "0xf557a54f25f1f44bc9dcb14446854fcfebc3fe8b3e70e76795f1ad698e1ee5bf"
+  },
+  "deployer": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73",
+  "timestamp": "2025-05-05T17:40:28.869Z"
+}

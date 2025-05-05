@@ -1,0 +1,16 @@
+{
+  "network": {
+    "name": "unknown",
+    "chainId": 560048
+  },
+  "totp": {
+    "address": "0x8A6343cda53A66F6FE380E454f928c28E45D4E64",
+    "txHash": "0xcc1cd9c76bdbf59382ab57d1e794cd3601dc185c6a58da93a0f916a723e52db3"
+  },
+  "twoFactorAuth": {
+    "address": "0x09b7e8C1195DA0bE833A9FEA470Ca527cD52d4df",
+    "txHash": "0x76623bd5f2bd7edf50f811705b0422fb69e19540eb1ef0d546176c8947b0a5a8"
+  },
+  "deployer": "0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73",
+  "timestamp": "2025-05-05T18:16:52.667Z"
+}
