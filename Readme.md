@@ -153,7 +153,7 @@ To run tests:
 ```bash
 npx hardhat run scripts/expiration-test.js --network <network-name>
 
-npx hardhat run scripts/deploy.js --network hoodi
+npx hardhat run scripts/expiration-test.js --network hoodi
 ```
 
 ## Deployment
