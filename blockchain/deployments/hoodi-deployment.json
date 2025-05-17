@@ -1,0 +1,14 @@
+{
+  "network": {
+    "name": "hoodi",
+    "chainId": 560048
+  },
+  "totp": {
+    "address": "0x3465351394c6FCaE1c209D1103f60Ae6F4DcA309",
+    "txHash": "0x5b45bf8f519f60d77b0757caed22f498b5cd336e1bbf47fe7b63a236e4a3d401"
+  },
+  "twoFactorAuth": {
+    "address": "0x14c252626fB54E5303D5Ddc5B237E9c6C25fa93e",
+    "txHash": "0xa2c42e5528d690fc25daa7e12fdd24154ad9d3d213fe5da3f572dc256cefdfe3"
+  },
+}

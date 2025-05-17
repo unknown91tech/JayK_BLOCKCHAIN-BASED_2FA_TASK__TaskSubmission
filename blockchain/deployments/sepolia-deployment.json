@@ -1,0 +1,14 @@
+{
+  "network": {
+    "name": "sepolia",
+    "chainId": 11155111
+  },
+  "totp": {
+    "address": "0xd2C4393079401583Aa66b72020457b381FE18783",
+    "txHash": "0xe0fc26fb46b5bb3434af6b23f30e84465f49d3dbd688b7f7568c499a623a17fd"
+  },
+  "twoFactorAuth": {
+    "address": "0x8A6343cda53A66F6FE380E454f928c28E45D4E64",
+    "txHash": "0x20bb38e8e5a16d23ce20d91caeb63244594f028819da980d6cfb0eed12cad7e3"
+  },
+}

@@ -1,0 +1,30 @@
+D:\uniquecrypto\test2-day2 - Copy\blockchain (master) (blockchain-2fa@1.0.0)
+λ npx hardhat run scripts/interact.js --network sepolia
+Connected to contract at: 0x8A6343cda53A66F6FE380E454f928c28E45D4E64
+Using account: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+Registering user: user1747472722737
+User registered successfully!
+Username "user1747472722737" exists: true
+Generated OTP for user1747472722737: 296935
+
+Attempting authentication with valid OTP...
+Authentication successful!
+
+Attempting replay attack with same OTP...
+Replay attack correctly prevented: cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason="execution reverted: OTP already used or expired", method="estimateGas", transaction={"from":"0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73","to":"0x8A6343cda53A66F6FE380E454f928c28E45D4E64","data":"0x0629aacb706b2d313734373437323732323733370000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000487e7","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: execution reverted: OTP already used or expired\n    at HttpProvider.request (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\hardhat\\src\\internal\\core\\providers\\http.ts:107:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at EthersProviderWrapper.send (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\@nomiclabs\\hardhat-ethers\\src\\internal\\ethers-provider-wrapper.ts:13:20)","code":3,"_isProviderError":true,"data":"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001b4f545020616c72656164792075736564206f7220657870697265640000000000"}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)
+
+Attempting authentication with invalid OTP...
+Invalid OTP correctly rejected: cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason="execution reverted: Invalid OTP", method="estimateGas", transaction={"from":"0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73","to":"0x8A6343cda53A66F6FE380E454f928c28E45D4E64","data":"0x0629aacb706b2d3137343734373237323237333700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001e240","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: execution reverted: Invalid OTP\n    at HttpProvider.request (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\hardhat\\src\\internal\\core\\providers\\http.ts:107:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n
+at EthersProviderWrapper.send (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\@nomiclabs\\hardhat-ethers\\src\\internal\\ethers-provider-wrapper.ts:13:20)","code":3,"_isProviderError":true,"data":"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b496e76616c6964204f5450000000000000000000000000000000000000000000"}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)
+
+==== EXPIRATION TEST ====
+Registering user for expiration test: exp53606
+Expiration test user registered successfully!
+Expiration test user "exp53606" exists: true
+Generated OTP for expiration test: 217413
+
+Waiting for 45 seconds to let OTP expire...
+45 seconds elapsed
+Attempting authentication with expired OTP...
+WARNING: Expired OTP was accepted! This should not happen.

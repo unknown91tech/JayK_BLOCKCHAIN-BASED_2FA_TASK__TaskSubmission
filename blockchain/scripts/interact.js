@@ -2,7 +2,7 @@ const hre = require("hardhat");
 const ethers = hre.ethers;
 
 // Contract address from deployment
-const CONTRACT_ADDRESS = "0x14c252626fB54E5303D5Ddc5B237E9c6C25fa93e";
+const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 
 // Helper function to wait for a specified number of milliseconds
 function sleep(ms) {

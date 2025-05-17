@@ -3,7 +3,7 @@ const ethers = hre.ethers;
 const { expect } = require("chai");
 
 // Using the most recent contract address from error logs
-const CONTRACT_ADDRESS = "0x14c252626fB54E5303D5Ddc5B237E9c6C25fa93e";
+const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 
 // Helper function to wait for a specified number of milliseconds
 function sleep(ms) {
@@ -92,9 +92,9 @@ async function main() {
   // Test 1: Basic User Registration and Lookup
   await runTest("Basic User Registration", async () => {
     // Create a simple, reproducible username and keys
-    const username = "testuser_fixed";
-    const publicKey = formatBytes32("fixed-pk");
-    const otpSeed = formatBytes32("fixed-seed");
+    const username = "basix1";
+    const publicKey = formatBytes32("fixed-pk-basix1");
+    const otpSeed = formatBytes32("fixed-seed-basix1");
     
     // Check if user already exists (to avoid errors on re-runs)
     const exists = await twoFactorAuth.isUsernameTaken(username);
@@ -132,9 +132,9 @@ async function main() {
   // Test 2: Authentication Test
   await runTest("Authentication Flow", async () => {
     // Use a very simple username with no timestamp
-    const username = "authuser_fixed";
-    const publicKey = formatBytes32("auth-pk-fixed");
-    const otpSeed = formatBytes32("auth-seed-fixed");
+    const username = "basix2";
+    const publicKey = formatBytes32("auth-pk-fixed-basix2");
+    const otpSeed = formatBytes32("auth-seed-fixed-basix2");
     
     // Check if user already exists
     const exists = await twoFactorAuth.isUsernameTaken(username);
@@ -172,9 +172,9 @@ async function main() {
   // Test 3: Replay Attack Prevention
   await runTest("Replay Attack Prevention", async () => {
     // Create user for replay attack test
-    const username = "replayuser_fixed";
-    const publicKey = formatBytes32("replay-pk-fixed");
-    const otpSeed = formatBytes32("replay-seed-fixed");
+    const username = "basix3";
+    const publicKey = formatBytes32("replay-pk-fixed-basix3");
+    const otpSeed = formatBytes32("replay-seed-fixed-basix3");
     
     // Check if user already exists
     const exists = await twoFactorAuth.isUsernameTaken(username);
@@ -215,9 +215,9 @@ async function main() {
   // Test 4: Invalid OTP
   await runTest("Invalid OTP", async () => {
     // Create user for invalid OTP test
-    const username = "invaliduser_fixed";
-    const publicKey = formatBytes32("invalid-pk-fixed");
-    const otpSeed = formatBytes32("invalid-seed-fixed");
+    const username = "basix4";
+    const publicKey = formatBytes32("invalid-pk-fixed-basix4");
+    const otpSeed = formatBytes32("invalid-seed-fixed-basix4");
     
     // Check if user already exists
     const exists = await twoFactorAuth.isUsernameTaken(username);

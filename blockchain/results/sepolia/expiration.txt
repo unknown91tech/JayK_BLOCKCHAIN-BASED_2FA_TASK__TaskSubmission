@@ -1,0 +1,70 @@
+D:\uniquecrypto\test2-day2 - Copy\blockchain (master) (blockchain-2fa@1.0.0)
+λ npx hardhat run scripts/expiration-test.js --network sepolia
+Connected to contract at: 0x8A6343cda53A66F6FE380E454f928c28E45D4E64
+Using account: 0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73
+
+========== RUNNING TEST: Basic User Registration ==========
+Registering new user: basix1
+Registration transaction completed
+Username "basix1" exists: true
+
+=== DEBUG: User lookup by username ===
+Username: basix1
+User exists: true
+Public key: 0x66697865642d706b2d6261736978310000000000000000000000000000000000
+Current OTP: 612187
+=== END DEBUG ===
+
+
+=== DEBUG: User lookup by public key ===
+Public Key: 0x66697865642d706b2d6261736978310000000000000000000000000000000000
+Username found: basix1
+User exists check: true
+Retrieved public key: 0x66697865642d706b2d6261736978310000000000000000000000000000000000
+Keys match: true
+=== END DEBUG ===
+
+OTP generated: 612187
+✅ TEST PASSED: Basic User Registration
+
+========== RUNNING TEST: Authentication Flow ==========
+Registering authentication test user: basix2
+
+=== DEBUG: User lookup by username ===
+Username: basix2
+User exists: true
+Public key: 0x617574682d706b2d66697865642d626173697832000000000000000000000000
+Current OTP: 770934
+=== END DEBUG ===
+
+Generated OTP: 770934
+
+=== DEBUG: User lookup by public key ===
+Public Key: 0x617574682d706b2d66697865642d626173697832000000000000000000000000
+Username found: basix2
+User exists check: true
+Retrieved public key: 0x617574682d706b2d66697865642d626173697832000000000000000000000000
+Keys match: true
+=== END DEBUG ===
+
+Attempting authentication with valid OTP...
+Authentication transaction completed
+User nonce after authentication: 1
+✅ TEST PASSED: Authentication Flow
+
+========== RUNNING TEST: Replay Attack Prevention ==========
+Registering replay test user: basix3
+Generated OTP for replay test: 998922
+First authentication attempt...
+First authentication successful
+Attempting replay attack with the same OTP...
+Replay attack correctly prevented: cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason="execution reverted: OTP already used or expired", method="estimateGas", transaction={"from":"0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73","to":"0x8A6343cda53A66F6FE380E454f928c28E45D4E64","data":"0x0629aacb7265706c61792d706b2d66697865642d6261736978330000000000000000000000000000000000000000000000000000000000000000000000000000000f3e0a","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: execution reverted: OTP already used or expired\n    at HttpProvider.request (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\hardhat\\src\\internal\\core\\providers\\http.ts:107:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at EthersProviderWrapper.send (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\@nomiclabs\\hardhat-ethers\\src\\internal\\ethers-provider-wrapper.ts:13:20)","code":3,"_isProviderError":true,"data":"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001b4f545020616c72656164792075736564206f7220657870697265640000000000"}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)
+✅ TEST PASSED: Replay Attack Prevention
+
+========== RUNNING TEST: Invalid OTP ==========
+Registering invalid OTP test user: basix4
+Attempting authentication with invalid OTP...
+Invalid OTP correctly rejected: cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason="execution reverted: Invalid OTP", method="estimateGas", transaction={"from":"0xd8bfF039909Ab3b82D364439c01Fa0A48F52Da73","to":"0x8A6343cda53A66F6FE380E454f928c28E45D4E64","data":"0x0629aacb696e76616c69642d706b2d66697865642d626173697834000000000000000000000000000000000000000000000000000000000000000000000000000001e240","accessList":null}, error={"name":"ProviderError","_stack":"ProviderError: execution reverted: Invalid OTP\n    at HttpProvider.request (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\hardhat\\src\\internal\\core\\providers\\http.ts:107:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at EthersProviderWrapper.send (D:\\uniquecrypto\\test2-day2 - Copy\\blockchain\\node_modules\\@nomiclabs\\hardhat-ethers\\src\\internal\\ethers-provider-wrapper.ts:13:20)","code":3,"_isProviderError":true,"data":"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b496e76616c6964204f5450000000000000000000000000000000000000000000"}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)
+✅ TEST PASSED: Invalid OTP
+
+========== ALL TESTS COMPLETED ==========
