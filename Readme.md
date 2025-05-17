@@ -100,9 +100,12 @@ A React-based web application that provides a user-friendly interface for intera
 
 2. Create a `.env` file with the following variables:
    ```
-   PRIVATE_KEY=your_private_key
-   HOODI_URL=your_hoodi_rpc_url
-   ETHERSCAN_API_KEY=your_etherscan_api_key
+   PRIVATE_KEY=
+   SEPOLIA_URL=
+   HOODI_URL=
+   ETHERSCAN_API_KEY=
+   CONTRACT_ADDRESS=your_twofactorauth_contract_address
+
    ```
 
 3. Compile smart contracts:
@@ -173,8 +176,16 @@ npx hardhat run scripts/deploy.js --network hoodi
 ```
 
 The most recent deployment was to the Hoodi testnet (Chain ID: 560048) with the following addresses:
+
+HOODI TESTNET:
+
 - TOTP: `0x3465351394c6FCaE1c209D1103f60Ae6F4DcA309`
 - TwoFactorAuth: `0x14c252626fB54E5303D5Ddc5B237E9c6C25fa93e`
+
+SEPOLIA TESTNET: 
+
+- TOTP: `0xd2C4393079401583Aa66b72020457b381FE18783`
+- TwoFactorAuth: `0x8A6343cda53A66F6FE380E454f928c28E45D4E64`
 
 ## Security Considerations
 
